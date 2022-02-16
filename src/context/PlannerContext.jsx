@@ -5,9 +5,10 @@ import { parseDate } from '../utils/parseDate';
 // { title: String, content: String, date: Date }
 function entriesReducer(entries, { type, payload }) {
   switch (type) {
-    case 'create':
+    case 'create': {
       const entry = { ...payload, id: entries.length };
       return [entry, ...entries];
+    }
     case 'reset':
       return [...payload];
     case 'update':
